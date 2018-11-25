@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ML Model Pneumonia Chest X-Ray Dataset</title>
+	<link href="../css/css.css" rel="stylesheet" type="text/css">
+	<script language="javascript" type="text/javascript" src="../../cgi-bin/js/index_xray.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+</head>
+
+<body onLoad="page_load()">
+<table width="1200" border="0" align="center" style="border-spacing: 0px">
+  <tbody>
+	<tr>
+      <td width="200">&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="header" colspan="4">Demonstration Of Deployed Keras Machine Learning Model <br>Using Pneumonia X-ray Dataset </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+
+      <td style="background-color:#FFFF00" colspan="4">
+		  <table width="100%" border="0">
+  <tbody>
+    <tr>
+      <td>Notice:</td>
+      <td>All content found on this website, including: text, images, audio, or other formats were created for informational, demonstrational and educational purposes only. The Content is not intended to be a substitute for professional medical advice, diagnosis, or treatment.</td>
+    </tr>
+  </tbody>
+</table>
+</td>
+
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="title">Drag and drop image then click the "Predict" button</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="sample_box" align="center">
+		  <div style="height:400px;width:300px;border:solid 1px black;overflow:scroll;overflow-x:hidden;overflow-y:scroll;">
+		  <br>
+		  <img id="NORMAL2-IM-1427-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1427-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1427-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1430-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1430-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1430-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1431-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1431-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1431-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1436-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1436-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1436-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1437-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1437-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1437-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1438-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1438-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1438-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1440-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1440-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1440-0001.jpeg<br><br>
+		  <img id="NORMAL2-IM-1442-0001.jpeg" src="http://mentorml.com/xray/images/NORMAL2-IM-1442-0001.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>NORMAL2-IM-1442-0001.jpeg<br><br>
+		  <img id="person1946_bacteria_4874.jpeg" src="http://mentorml.com/xray/images/person1946_bacteria_4874.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1946_bacteria_4874.jpeg<br><br>		
+		  <img id="person1946_bacteria_4875.jpeg" src="http://mentorml.com/xray/images/person1946_bacteria_4875.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1946_bacteria_4875.jpeg<br><br>	
+		  <img id="person1947_bacteria_4876.jpeg" src="http://mentorml.com/xray/images/person1947_bacteria_4876.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1947_bacteria_4876.jpeg<br><br>	
+		  <img id="person1949_bacteria_4880.jpeg" src="http://mentorml.com/xray/images/person1949_bacteria_4880.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1949_bacteria_4880.jpeg<br><br>
+		  <img id="person1950_bacteria_4881.jpeg" src="http://mentorml.com/xray/images/person1950_bacteria_4881.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1950_bacteria_4881.jpeg<br><br>
+		  <img id="person1951_bacteria_4882.jpeg" src="http://mentorml.com/xray/images/person1951_bacteria_4882.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1951_bacteria_4882.jpeg<br><br>
+		  <img id="person1952_bacteria_4883.jpeg" src="http://mentorml.com/xray/images/person1952_bacteria_4883.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person19452_bacteria_4883.jpeg<br><br>
+		  <img id="person1954_bacteria_4886.jpeg" src="http://mentorml.com/xray/images/person1954_bacteria_4886.jpeg" draggable="true" ondragstart="drag(event)" width="130" height="130">
+		  <br>person1954_bacteria_4886.jpeg<br><br>
+		  </div>
+		</td>
+	  <td>&nbsp;</td>
+      <td>
+	<table width="100%" border="0">
+			  <tbody>
+				<tr>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td><div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"><img /></div></td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td class="center"><input type="button" id="predict_button" class="predict_btn" value="Predict" onClick="predict()"></td>
+				  <td class="center"><span class="measurement_inputs" id="non_pneumonia">00.0%</span><br><span class="measurement_inputs">Non-Pneumonia</span></td>
+				  <td class="center"><span class="measurement_inputs" id="pneumonia">00.0%</span><br><span class="measurement_inputs">Pneumonia</span></td>
+				</tr>
+			  </tbody>
+			</table>
+		</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+		</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="ref_header">References:</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Source code:</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Model development video: </td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Model deployment video:</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>Dataset: </td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="title">How it works</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td align="center"></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+      <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+      <td class="center">&copy;2018 Marc McLean</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
